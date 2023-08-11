@@ -3,8 +3,8 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@Pankti16"
   },
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "A table component package without any third party dependency.",
   "scripts": {
     "rollup": "rollup -c",
     "test": "jest",
@@ -12,7 +12,7 @@
     "build-storybook": "storybook build",
     "prepublishOnly": "npm run rollup"
   },
-  "author": "",
+  "author": "Pankti Shah",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.22.10",
