@@ -4,13 +4,13 @@ The table is a React package for displaying responsive and customizable tables u
 
 # Installation
 ```bash
-	npm install @pankti16/my-table
+	npm install @Pankti16/my-table
 ```
 
 ## Usage
 
 ```javascript
-import {Table} from "@pankti16/my-table";
+import {Table} from "@Pankti16/my-table";
 
 <Table dataSource={data} />;
 ```
@@ -60,7 +60,7 @@ Allowed keys for customTheme object. These object will allow to change colors, p
 To change between custom theme and default theme a table method `setCustomTheme` needs to be called. Passing customTheme is not sufficient in-order to change the theme of whole table. We need to call this method as well. This method takes on argument as a boolean value, by default it is false. To set custom theme call it with `true` value like `setCustomTheme(true)` and to revert back to default theme `setCustomTheme()`.
 
 ```javascript
-import {Table} from "@pankti16/my-table";
+import {Table} from "@Pankti16/my-table";
 
 const tableRef = React.useRef();
 
