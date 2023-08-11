@@ -1,9 +1,9 @@
 {
   "name": "@Pankti16/my-table",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@pankti16"
+    "registry": "https://npm.pkg.github.com/@Pankti16"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "scripts": {
     "rollup": "rollup -c",
