@@ -1,0 +1,64 @@
+// Get the mixin for label and value styling
+@import '../Table/_custom-styles.scss';
+
+//Style for row in mobile view
+.my-table .mobile-table-row {
+    background-color: var(--bg-color);
+}
+
+//Style for selected row in mobile view
+.my-table .mobile-table-row-selected {
+    background-color: var(--secondary-color);
+    transition: all 0.2s ease;
+}
+
+//Style for row when there is no input
+.my-table .mobile-cell-without-select {
+    padding: var(--padding);
+}
+
+//Style for each cell -> row to show input and data
+.mobile-table-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+//Style for left side of cell -> will hold input
+.my-table .mobile-table-body .left-span {
+    margin-right: 2em;
+}
+
+//Style for right side of cell -> will hold data with label and value pair
+.my-table .mobile-table-body .right-span {
+    display: flex;
+    flex-direction: column;
+}
+
+//Style for right side of cell wrapper -> will hold data with label and value pair
+.my-table .mobile-table-body .right-span>span {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.my-table .mobile-table-body .add-margin-top {
+    margin-top: -5px;
+}
+
+//Style for showing data labels -> inherit common from mixin
+.my-label {
+    @include label-style;
+    text-align: left;
+    margin-right: 1em;
+    min-width: 4em;
+    max-width: 4em;
+}
+
+//Style for showing data values -> inherit common from mixin
+.my-value {
+    @include value-style;
+    text-align: left;
+}

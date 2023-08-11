@@ -1,0 +1,146 @@
+// Include Sen font from google apis (instead of Avenir)
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700&display=swap');
+
+//Default css variables
+:root {
+    //Colors
+    --primary-color: #5C50BB; //Primary color
+    --secondary-color: #EFEDFD; //Secondary color
+    --hover-color: #DEDAFA; //Hover color / light color version of primary
+    --bg-color: #FFF; //Background color
+    --text-color: #000; //Text color
+    --divider-color: #E1E1E1; //Divider color
+    --grey-color: #F7F7F7; //Grey color, for now in use for showing color for header row background
+    --border-color: #A8A8A8; //Border color for custom input elements
+    --error-color: tomato; //Error color
+    //Shadow
+    --box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.12);
+    //Table padding
+    --padding: 8px 16px;
+    //Font styles
+    --h-font-size: 16px; //Header row text font size
+    --c-font-size: 16px; //Normal row text font size
+    --font-weight-light: 400; //Light font weight
+    --font-weight-normal: 500; //Normal font weight
+    --font-weight-heavy: 700; //Heavy font weight
+    --font-family: 'Sen', sans-serif; // Font family
+    //Table border radius
+    --table-border-radius: 8px;
+    //Input element related
+    --element-size: 24px; //Size of input element
+    --element-content-size: 12px; //Size of input content element
+    --element-border-radius: 4px; //Border radius of input element
+    //Sort icons related
+    --sort-icons-size: 12px; //Size of sorting icons
+    --sort-icons-wrapper-size: 20px; //Size of circle around sorting icon
+    //Check-mark for checkbox
+    --tick-path: "M11.3086 2.183C11.5526 2.4275 11.5526 2.823 11.3086 3.067L4.8676 9.508L4.86234 9.51344C4.85878 9.51718 4.85517 9.52088 4.8515 9.52455C4.607 9.76805 4.2115 9.76805 3.9675 9.52455L0.683 6.24005C0.439 5.99555 0.439 5.59955 0.683 5.35605C0.927 5.11205 1.3225 5.11205 1.567 5.35605L4.409 8.1985L10.4246 2.183C10.6691 1.939 11.0646 1.939 11.3086 2.183Z";
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    :root {
+        --h-font-size: 18px;
+        --c-font-size: 18px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    :root {
+        --h-font-size: 20px;
+        --c-font-size: 20px;
+        --element-size: 32px;
+        --table-border-radius: 16px;
+        --padding: 24px;
+        --element-border-radius: 8px;
+        --element-content-size: 14px;
+        --sort-icons-size: 16px;
+        --sort-icons-wrapper-size: 40px;
+        --tick-path: "M15.0781 0.910687C15.4035 1.23669 15.4035 1.76402 15.0781 2.08935L6.49013 10.6774L6.48312 10.6846C6.47838 10.6896 6.47356 10.6945 6.46867 10.6994C6.14267 11.0241 5.61533 11.0241 5.29 10.6994L0.910668 6.32009C0.585335 5.99409 0.585335 5.46609 0.910668 5.14142C1.236 4.81609 1.76333 4.81609 2.08933 5.14142L5.87867 8.93135L13.8995 0.910687C14.2255 0.585354 14.7528 0.585354 15.0781 0.910687Z"
+    }
+}
+
+//Import custom mixins for header row label and normal row styles
+@import 'custom-styles';
+
+//Style for table wrapper
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+//Style for table
+.my-table {
+    width: 100%;
+    table-layout: fixed;
+    border-radius: var(--table-border-radius);
+    border-collapse: collapse;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: var(--box-shadow);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+//Show border for each row
+.my-table tr {
+    border-bottom: 1px solid var(--divider-color);
+}
+//Do not show border for last row
+.my-table tbody tr:last-child {
+    border-bottom: none;
+}
+//Background color for table header row
+.my-table thead tr {
+    background-color: var(--grey-color);
+}
+//Background color for table normal row
+.my-table tbody tr {
+    background-color: var(--bg-color);
+}
+//Table header row style -> inherit common from mixin
+.my-table th {
+    @include label-style;
+    padding: var(--padding);
+    text-align: left;
+}
+//Table normal row style -> inherit common from mixin
+.my-table td {
+    @include value-style;
+    padding: var(--padding);
+    text-align: left;
+}
+//Style for column with select option
+.my-table .select-column {
+  max-width: 1em;
+  min-width: 1em;
+  width: 1em;
+}
+//Style for showing border radius
+.my-table tr th:first-child {
+    border-top-left-radius: var(--table-border-radius);
+}
+.my-table tr th:last-child {
+    border-top-right-radius: var(--table-border-radius);
+}
+.my-table tr:last-child td:first-child {
+    border-bottom-left-radius: var(--table-border-radius);
+}
+.my-table tr:last-child td:last-child {
+    border-bottom-right-radius: var(--table-border-radius);
+}
+
+//Style for showing error message
+.error-msg {
+    color: var(--error-color);
+    margin-top: 20px;
+    font-size: var(--c-font-size);
+    white-space: pre-wrap;
+    line-height: calc(var(--c-font-size) + 15px);
+    text-align: center;
+}

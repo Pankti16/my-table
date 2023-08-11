@@ -1,0 +1,13 @@
+/* Style for table row */
+.my-table .table-row {
+    background-color: var(--bg-color);
+}
+/* Style for selected table row */
+.my-table .table-row-selected {
+    background-color: var(--secondary-color);
+    transition: all 0.2s ease;
+}
+/* Style for row when there is no input */
+.my-table .cell-without-select {
+    padding: var(--padding);
+}

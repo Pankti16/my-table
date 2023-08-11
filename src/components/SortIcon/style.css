@@ -1,0 +1,20 @@
+/* Style for sorting icon */
+.my-table .sort-icons {
+    height: var(--sort-icons-size);
+    width: var(--sort-icons-size);
+}
+/* Wrapper style for holding a sorting icon */
+.my-table .sort-icon-wrapper {
+    border-radius: 50%;
+    height: var(--sort-icons-wrapper-size);
+    width: var(--sort-icons-wrapper-size);
+    margin-left: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .header-column-name .sort-icon-wrapper:hover{
+    background-color: var(--hover-color);
+    transition: all 0.2s ease-in-out;
+} */

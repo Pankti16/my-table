@@ -1,0 +1,34 @@
+/* Hide default radio and show custom */
+.my-table input[type="radio"] {
+  appearance: none;
+  background-color: var(--bg-color);
+  margin: 0;
+  font: inherit;
+  color: var(--bg-color);
+  width: var(--element-size);
+  height: var(--element-size);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+/* Show circle as a content of the radio */
+.my-table input[type="radio"]::before {
+  content: "";
+  width: calc(var(--element-size) / 2);
+  height: calc(var(--element-size) / 2);
+  border-radius: 50%;
+  transform: scale(0);
+  background-color: var(--bg-color);
+  transition: 120ms transform ease-in-out;
+}
+/* When checked scale the check-mark to 1 */
+.my-table input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+/* When checked change background color and remove border */
+.my-table input[type="radio"]:checked {
+  background-color: var(--primary-color);
+  border: 0px;
+}

@@ -1,0 +1,18 @@
+/* Style for showing sorting icon with column name/accessor */
+.my-table .header-inline-flex {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+.my-table .header-inline-flex > div {
+    display: contents;
+}
+/* Style for showing highlight when sorting column is in hover state */
+.my-table .header-column-name:hover .sort-icon-wrapper{
+    background-color: var(--hover-color);
+    transition: all 0.2s ease-in-out;
+}
+/* Style for header row when there is no input */
+.my-table .header-without-select {
+    padding: var(--padding);
+}

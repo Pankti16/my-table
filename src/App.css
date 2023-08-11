@@ -1,0 +1,23 @@
+.my-button-group {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.my-button:first-child {
+  margin-right: 50px;
+}
+
+.my-button {
+  font-size: 30px;
+  border: none;
+  padding: 10px 20px;
+  background-color: cadetblue;
+  border-radius: 7px;
+  color: #FFF;
+}
+
+.my-table-wrapper {
+  background-color: aquamarine;
+  width: 600px;
+}
