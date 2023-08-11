@@ -1,9 +1,9 @@
 {
-  "name": "@Pankti16/my-table",
+  "name": "@pankti16/my-table",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@Pankti16"
+    "registry": "https://npm.pkg.github.com/@pankti16"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A table component package without any third party dependency.",
   "scripts": {
     "rollup": "rollup -c",
